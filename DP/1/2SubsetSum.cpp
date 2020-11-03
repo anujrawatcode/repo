@@ -23,9 +23,9 @@ bool SubsetSumDP(int arr[], int n, int sum)
 {
 	bool dp[n + 1][sum + 1];
 
-	for (int i = 0; i < n; i++)   //Initilization
+	for (int i = 0; i < n+1; i++)   //Initilization
 	{
-		for (int j = 0; j < sum; j++)
+		for (int j = 0; j < sum+1; j++)
 		{
 			if (i == 0 && j == 0)  
 				dp[i][j] = true;

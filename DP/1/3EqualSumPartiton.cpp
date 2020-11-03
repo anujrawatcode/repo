@@ -7,40 +7,40 @@ using namespace std;
 
 bool EqualSumDP(int arr[], int n) //
 {
-    int sum = 0;
-    for (int i = 0; i < n; i++)
-        sum = sum + arr[i];
-    if (sum % 2 != 0)   //if sum if arr is odd cannot be divided into two halfs
-        return 0;
-    sum = sum / 2;
+        int sum = 0;
+        for (int i = 0; i < n; i++)
+            sum = sum + arr[i];
+        if (sum % 2 != 0)   //if sum if arr is odd cannot be divided into two halfs
+            return 0;
+        sum = sum / 2;
 
-    //same as subset sum just sum is equal to half of sum of array
-    bool dp[n + 1][sum + 1];
+        //same as subset sum just sum is equal to half of sum of array
+        bool dp[n + 1][sum + 1];
 
-    for (int i = 0; i < n; i++) //Initilization
-    {
-        for (int j = 0; j < sum; j++)
+        for (int i = 0; i < n+1; i++) //Initilization
         {
-            if (i == 0 && j == 0)
-                dp[i][j] = true;
-            if (i == 0)
-                dp[i][j] = false;
-            if (j == 0)
-                dp[i][j] = true;
+            for (int j = 0; j < sum+1; j++)
+            {
+                if (i == 0 && j == 0)
+                    dp[i][j] = true;
+                if (i == 0)
+                    dp[i][j] = false;
+                if (j == 0)
+                    dp[i][j] = true;
+            }
         }
-    }
 
-    for (int i = 1; i < n + 1; i++)
-    {
-        for (int j = 1; j < sum + 1; j++)
+        for (int i = 1; i < n + 1; i++)
         {
-            if (arr[i - 1] > j)
-                dp[i][j] = dp[i - 1][j];
-            else
-                dp[i][j] = (dp[i - 1][j] || dp[i - 1][j - arr[i - 1]]);
+            for (int j = 1; j < sum + 1; j++)
+            {
+                if (arr[i - 1] > j)
+                    dp[i][j] = dp[i - 1][j];
+                else
+                    dp[i][j] = (dp[i - 1][j] || dp[i - 1][j - arr[i - 1]]);
+            }
         }
-    }
-    return dp[n][sum];
+        return dp[n][sum];
 }
 
 void solve()
