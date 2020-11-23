@@ -1,0 +1,26 @@
+Knapsack Pattern..................................
+Subset sum
+Equal sum partition
+Count of subset sum with a given sum
+Minimum subset Sum difference
+Count the number of subset with a given diff
+Target Sum
+
+Unbounded Knapsack................................
+Rod Cutting
+Coin change maximum
+coin change minimum
+
+///Longest Common subsequence.........................
+///longest common substring
+print longest common subsequence
+////shortest common super sequence
+minimum number of insert and delete to 
+longest palandromic subsequence
+min no of delete in a string to make
+print shortest common supersequence
+longest repeating subsequence
+sequence pattern matching
+minimun number of insertion
+
+matrix chain multipication.........................
